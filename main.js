@@ -11,10 +11,33 @@ $("button").on("click", function () {
     renderApts(relevantApts)
 })
 
+const source = $('#apartments-template').html();
+const template = Handlebars.compile(source);
+
 const renderApts = function (apartments) {
     $("#results").empty()
     console.log(apartments) //array of apartments to render
-    //Your code goes here.
+
+    const newHTML = template({apartments : apartments});
+    $('#results').append(newHTML);
+}
+renderApts(apartments) //renders apartments when page loads
+
+
+/**
+ * 
+ * var classData = {
+    classmates: [
+        {name: "That on gal", description: "Always has the ansswer"},
+        {name: "The weird dude", description: "Quick with a smile"},
+        {name: "Taylor", description: "Just Taylor"}
+    ]
 }
 
-renderApts(apartments) //renders apartments when page loads
+const source = $('#classmates-template').html();
+const template = Handlebars.compile(source);
+const newHTML = template(classData);
+
+$('.classmates').append(newHTML);
+ * 
+ */

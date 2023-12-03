@@ -159,3 +159,20 @@ button:active{background-color: #443729;}
     border-radius: 5px;
     font-family: 'Raleway', sans-serif;
 }
+
+p{
+    color: black;
+    padding-left: 2%;
+    /* padding-top: 2%; */
+}
+h3{
+    color: black;
+    padding-left: 1%;
+}
+
+img{
+    height: 30%;
+    width: 30%;
+    /* padding-bottom: 1%; */
+    /* padding-top: 1%; */
+}

@@ -4,14 +4,14 @@
 <head>
     <title>Selouse</title>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-<div>Holaaaa</div>
     <div id="search">
         <input type="text" placeholder="Address" id="addr-input">
         <input type="number" class="min price" placeholder="Min. Price" id="min-p-input">
@@ -33,13 +33,24 @@
 
     <hr>
 
-    <div id="results"></div>
-
-    <!-- Your Code Here -->
-    <!-- You should start doing handlebar stuff here -->
-    <!-- Your Code Here -->
-
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <div id="results">
+    
+    <script id="apartments-template" type="text/x-handlebars-template">
+        {{#each apartments}}
+          <div class="apartments">
+            <img src="{{img}}"/>
+            <h3>{{address}}</h3>
+            <p><i class="fa fa-dollar" style="color:red"></i>   Price: {{price}}</p>
+            <p><i class='fas fa-bed' style="color:red"></i> Rooms: {{rooms}}</p>
+            <p><i class="fas fa-parking" style="color:red"></i>  Parking available</p>
+            <p><i class="fa fa-envelope"style="color:red"></i> Contact: {{contactDetails.name}} - {{contactDetails.email}}</p>
+        <br><br>  
+        </div>
+        {{/each}}
+    </script>
+</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
     <script src="apt-data.js"></script>
     <script src="apt-filter.js"></script>
