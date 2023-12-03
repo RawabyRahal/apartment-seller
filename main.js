@@ -5,9 +5,13 @@ $("button").on("click", function () {
     let maxPrice = $("#max-p-input").val()
     let minRooms = $("#min-r-input").val()
     let maxRooms = $("#max-r-input").val()
-    let immediate = $("#immed-y")
+    let immediate = $("#immed-y").prop("checked");
+    // console.log("checke:", immediate);
+    let parking = $("#park-y").prop("checked");
+    // console.log("checke:", parking);
 
-    let relevantApts = findRelevantApts(address, minPrice, maxPrice, minRooms, maxRooms, immediate)
+    
+    let relevantApts = findRelevantApts(address, minPrice, maxPrice, minRooms, maxRooms, immediate, parking)
     renderApts(relevantApts)
 })
 
