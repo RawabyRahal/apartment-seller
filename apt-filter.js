@@ -19,10 +19,10 @@ const findRelevantApts = function (address, minPrice, maxPrice, minRooms, maxRoo
     // return ((parking ? relevantApts : relevantApts.filter(a => (a.parking)))
 
     if (parking && !immediate) {
-        return relevantApts.filter(a => (a.parking))
+        return relevantApts.filter(a => (a.parking) && !(a.immediate))
     }
     else if (immediate && !parking) {
-        return relevantApts.filter(a => (a.immediate))
+        return relevantApts.filter(a => (a.immediate) && !(a.parking))
     }
     else if(parking && immediate){
         return relevantApts.filter(a => ((a.immediate) && (a.parking)))
